@@ -6,6 +6,7 @@ namespace ContactForm\Mail;
 
 use PHPMailer\PHPMailer\Exception as PhpMailerException;
 use PHPMailer\PHPMailer\PHPMailer;
+use Throwable;
 
 /**
  * Verantwortlich für den Versand von E-Mails über SMTP.
@@ -54,6 +55,11 @@ final class MailService
         } catch (PhpMailerException $exception) {
             throw new MailException(
                 'Der Mailversand ist fehlgeschlagen.',
+                previous: $exception
+            );
+        } catch (Throwable $exception) {
+            throw new MailException(
+                'Beim Mailversand ist ein unerwarteter Fehler aufgetreten.',
                 previous: $exception
             );
         }

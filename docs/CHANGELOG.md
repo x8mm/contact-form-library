@@ -1,17 +1,44 @@
 # CHANGELOG
 
-## v0.10.5-dev
+Alle Änderungen nach Abschluss der Architekturphase.
+
+---
+
+## Version 0.9.x
 
 ### Audit
-- Audit-Blöcke 1–11 abgeschlossen
-- Auditpunkte AUDIT-001 bis AUDIT-085 konsolidiert
 
-### Geplante Änderungen
-- CF-001
-- CF-002
-- CF-003
-- CF-004
-- CF-005
+- vollständiges Projekt-Audit durchgeführt
+- Architektur bewertet
+- Workflow bewertet
+- Security geprüft
+- HTTP geprüft
+- Persistenz geprüft
+- Logging geprüft
+- Mail geprüft
 
-## Nächster Meilenstein
-Phase B – Umsetzung der Code-Fixes und MVP-Finalisierung.
+---
+
+### Entscheidungen
+
+- SubmissionWorkflow bleibt zukünftige Architektur
+- FormProcessor bleibt MVP-Orchestrator
+- keine weiteren Architekturänderungen
+
+---
+
+### Persistenz
+
+SubmissionStorage
+
+- delete() implementiert
+- Klasse vollständig abgeschlossen
+
+---
+
+## Nächste Änderungen
+
+- MVP-002 Mail
+- MVP-003 Logging
+- MVP-004 Finalize
+- MVP-005 HTTP

@@ -1,0 +1,45 @@
+{
+    "name": "contactform/contact-library",
+    "description": "A lightweight, secure and reusable PHP contact form library with SMTP support.",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+        "contact-form",
+        "php",
+        "smtp",
+        "phpmailer",
+        "ajax",
+        "security"
+    ],
+    "homepage": "https://example.com",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.4",
+        "phpmailer/phpmailer": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "ContactForm\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ContactForm\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "classmap-authoritative": false
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "@composer dump-autoload"
+        ]
+    }
+}

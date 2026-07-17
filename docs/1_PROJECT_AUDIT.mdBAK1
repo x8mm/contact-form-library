@@ -1,0 +1,188 @@
+# PROJECT_AUDIT.md
+
+# Project Audit
+
+**Version:** 1.0
+
+**Status:** Laufend
+
+---
+
+# Ziel
+
+Technische und architektonische Prüfung der Bibliothek vor Abschluss der Integrationsphase (Phase 10.5).
+
+Das Audit dient als Grundlage für die anschließende Finalisierung des MVP.
+
+---
+
+# Bewertungsmaßstab
+
+| Symbol | Bedeutung             |
+| ------ | --------------------- |
+| ✅      | Bereits erledigt      |
+| 🟢     | Ohne Beanstandung     |
+| 🟡     | Optimierung empfohlen |
+| 🔴     | Änderung erforderlich |
+
+Prioritäten:
+
+* P1 – Muss vor MVP erledigt werden
+* P2 – Sollte vor Release erledigt werden
+* P3 – Optional (Version 1.1)
+
+---
+
+# Bereits geprüfte Bereiche
+
+* Projektstruktur
+* Bootstrap
+* Composer
+* Konfiguration
+* Workflow
+* Submission
+* Mail
+* Security
+
+---
+
+# Auditpunkte
+
+| ID        | Status | Priorität | Kurzbeschreibung                    |
+| --------- | ------ | --------- | ----------------------------------- |
+| AUDIT-001 | ✅      | P1        | macOS-Artefakte entfernt            |
+| AUDIT-002 | ✅      | P1        | logs/failed korrigiert              |
+| AUDIT-003 | 🟡     | P2        | Projektstruktur prüfen              |
+| AUDIT-004 | ✅      | P2        | MailMessage umbenannt               |
+| AUDIT-005 | 🟡     | P2        | Bootstrap-Struktur analysieren      |
+| AUDIT-006 | 🟡     | P2        | Root-Verzeichnisse bewerten         |
+| AUDIT-007 | 🔴     | P1        | PROJECT_AUDIT-Dateiname korrigieren |
+| AUDIT-008 | 🟡     | P2        | Bootstrap-Konzept prüfen            |
+| AUDIT-009 | 🟡     | P2        | index.php / submit.php bewerten     |
+| AUDIT-010 | 🟡     | P3        | .DS_Store-Dateien entfernen         |
+| AUDIT-011 | 🔴     | P1        | Composition Root fehlt              |
+| AUDIT-012 | 🔴     | P1        | Bootstrap noch ohne Funktion        |
+| AUDIT-013 | 🟡     | P2        | HTTP-Einstiegspunkt bewerten        |
+| AUDIT-014 | 🟡     | P2        | Bootstrap-Initialisierung           |
+| AUDIT-015 | 🟢     | P2        | Composer                            |
+| AUDIT-016 | 🟢     | P2        | .env-Konzept                        |
+| AUDIT-017 | 🟡     | P3        | APP_DEBUG-Auswertung                |
+| AUDIT-018 | 🟢     | P2        | PSR-4                               |
+| AUDIT-019 | 🟢     | P2        | PHPMailer                           |
+| AUDIT-020 | 🟢     | P2        | Dotenv                              |
+| AUDIT-021 | 🟢     | P2        | Workflow                            |
+| AUDIT-022 | 🟢     | P2        | Workflow Steps                      |
+| AUDIT-023 | ✅      | P2        | FinalizeStep-Dateiname korrigiert   |
+| AUDIT-024 | 🟢     | P2        | WorkflowStepInterface               |
+| AUDIT-025 | 🟢     | P2        | Submission                          |
+| AUDIT-026 | 🟢     | P2        | Immutable Domain                    |
+| AUDIT-027 | 🟢     | P2        | MailMetadata                        |
+| AUDIT-028 | 🟢     | P2        | Serializer                          |
+| AUDIT-029 | 🟢     | P2        | Storage                             |
+| AUDIT-030 | 🟡     | P3        | Auskommentierten Code entfernen     |
+| AUDIT-031 | 🟡     | P3        | Entwicklungs-Kommentare bereinigen  |
+| AUDIT-032 | 🟢     | P2        | Repository                          |
+| AUDIT-033 | 🟢     | P2        | Factory                             |
+| AUDIT-034 | 🟢     | P2        | Hasher                              |
+| AUDIT-035 | 🟢     | P2        | MailMetadata                        |
+| AUDIT-036 | 🟡     | P2        | Statusmodell konsistent prüfen      |
+| AUDIT-037 | 🟢     | P2        | Mailarchitektur                     |
+| AUDIT-038 | 🟢     | P2        | MailBuilder                         |
+| AUDIT-039 | 🟢     | P2        | MailTransport                       |
+| AUDIT-040 | 🟡     | P3        | MailTransportInterface (v1.1)       |
+| AUDIT-041 | 🟡     | P2        | Template-Trennung prüfen            |
+| AUDIT-042 | 🟢     | P2        | Workflow-Integration                |
+| AUDIT-043 | 🟢     | P2        | SMTP                                |
+| AUDIT-044 | 🟢     | P2        | Mehrere Empfänger                   |
+| AUDIT-045 | 🟡     | P2        | Reply-To RFC-Prüfung                |
+| AUDIT-046 | 🟢     | P2        | UTF-8                               |
+| AUDIT-047 | 🟢     | P2        | HTML / Plain Text                   |
+| AUDIT-048 | 🟡     | P2        | Exception-Konsistenz                |
+| AUDIT-049 | 🟡     | P3        | Mail-Renderer (v1.1)                |
+| AUDIT-050 | 🟢     | P2        | SecurityHeaders                     |
+| AUDIT-051 | 🟢     | P2        | CSRF                                |
+| AUDIT-052 | 🟢     | P2        | RateLimiter                         |
+| AUDIT-053 | 🟢     | P2        | SessionManager                      |
+| AUDIT-054 | 🟡     | P2        | Cookie-Konfiguration prüfen         |
+| AUDIT-055 | 🟡     | P1        | Security-Integration                |
+| AUDIT-056 | 🟢     | P2        | CSRF-Architektur                    |
+| AUDIT-057 | 🟢     | P2        | Honeypot                            |
+| AUDIT-058 | 🟡     | P2        | IpResolver-Konsistenz               |
+| AUDIT-059 | 🟢     | P2        | Session Hardening                   |
+| AUDIT-060 | 🟢     | P2        | Security-Architektur                |
+| AUDIT-061 | 🟢     | P2        | Validation Architecture             |
+| AUDIT-062 | 🟢     | P2        | ValidationResult                    |
+| AUDIT-063 | 🟢     | P2        | UTF-8                               |
+| AUDIT-064 | 🟡     | P3        | Codequalität   (CF-001)             |
+| AUDIT-065 | 🟢     | P2        | Normalisierung (OBS)                |
+| AUDIT-066 | 🟢     | P2        | SRP                                 |
+| AUDIT-067 | 🟢     | P2        | Workflow Integration                |
+| AUDIT-068 | 🟢     | P2        | Workflow Exception                  |
+| AUDIT-069 | 🟡     | P3        | Validator API   (OBS)               |
+| AUDIT-070 | 🟡     | P2        | Normalisierung  (CF-002)            |
+
+---
+
+# Audit-Zwischenstand
+
+## Bereits geprüfte Bereiche
+
+| Bereich         | Status |
+| --------------- | ------ |
+| Projektstruktur | ✅      |
+| Bootstrap       | ✅      |
+| Composer        | ✅      |
+| Konfiguration   | ✅      |
+| Workflow        | ✅      |
+| Submission      | ✅      |
+| Mail            | ✅      |
+| Security        | ✅      |
+| Validation      | ✅      |
+
+## Aktuelle Audit-Statistik
+
+| Bewertung                | Anzahl |
+| ------------------------ | -----: |
+| ✅ Bereits erledigt       |      4 |
+| 🟢 Ohne Beanstandung     |     39 |
+| 🟡 Optimierung empfohlen |     24 |
+| 🔴 Änderung erforderlich |      3 |
+
+## Geplante Code-Fixes
+
+| CF     | Quelle    |
+| ------ | --------- |
+| CF-001 | AUDIT-064 |
+| CF-002 | AUDIT-070 |
+
+## Projektbewertung
+
+Nach Abschluss der ersten neun Prüfbereiche zeigt sich eine stabile Architektur.
+
+Die bisher identifizierten Optimierungen betreffen überwiegend:
+
+* Codequalität
+* Konsistenz
+* Integration
+
+Es wurden bislang keine grundlegenden Architekturprobleme im Domain-Modell, Workflow oder Security-Konzept festgestellt.
+
+Die noch offenen P1-Themen betreffen hauptsächlich die finale Integration der Anwendung (Composition Root) und werden nach Abschluss des Audits in Phase B umgesetzt.
+
+
+
+# Noch ausstehende Audit-Blöcke
+
+* Logging
+* HTTP
+* Frontend
+* Dokumentation
+* Release
+
+---
+
+# Abschluss
+
+Nach Abschluss des Audits beginnt Phase B.
+
+Alle Änderungen werden unter einer CF-ID dokumentiert und im CHANGELOG referenziert.

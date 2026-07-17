@@ -1,0 +1,136 @@
+# CHANGELOG.md
+
+# Changelog
+
+Alle Änderungen werden nach Abschluss des Audits unter einer eindeutigen Änderungs-ID (CF-xxx) dokumentiert.
+
+---
+
+## Version 0.10.5-dev
+
+### Audit-Vorbereitung
+
+#### Projekt
+
+* Projektstruktur erstellt
+* Composer eingerichtet
+* PSR-4 aktiviert
+* .env-Konfiguration eingeführt
+
+#### Security
+
+* CSRF integriert
+* Rate Limiter implementiert
+* Session Hardening umgesetzt
+* Security Headers ergänzt
+
+#### Validation
+
+* Validator erstellt
+* UTF-8-Unterstützung ergänzt
+* Feldregeln erweitert
+
+#### Workflow
+
+* SubmissionWorkflow aufgebaut
+* WorkflowContext eingeführt
+* WorkflowResult ergänzt
+* WorkflowStepInterface eingeführt
+
+#### Submission
+
+* Repository implementiert
+* Serializer implementiert
+* Storage implementiert
+* Factory ergänzt
+* Hashing ergänzt
+
+#### Mail
+
+* MailBuilder implementiert
+* MailService ergänzt
+* MailTransport eingeführt
+* MailMessage erstellt
+
+---
+
+# Audit
+
+Folgende während des Audits bereits bereinigte Punkte wurden abgeschlossen:
+
+* AUDIT-001 – macOS-Artefakte entfernt
+* AUDIT-002 – Verzeichnis "failed" korrigiert
+* AUDIT-004 – MailMassage → MailMessage
+* AUDIT-023 – FinalizedStep → FinalizeStep
+
+
+## Audit-Fortschritt
+
+### Abgeschlossene Audit-Blöcke
+
+* Projektstruktur
+* Bootstrap
+* Composer
+* Konfiguration
+* Workflow
+* Submission
+* Mail
+* Security
+* Validation
+
+### Neue Auditpunkte
+
+#### Validation
+
+* AUDIT-061 – Validation Architecture
+* AUDIT-062 – ValidationResult
+* AUDIT-063 – UTF-8
+* AUDIT-064 – Codequalität (CF-001)
+* AUDIT-065 – Normalisierung (OBS)
+* AUDIT-066 – SRP
+* AUDIT-067 – Workflow Integration
+* AUDIT-068 – Workflow Exception
+* AUDIT-069 – Validator API (OBS)
+* AUDIT-070 – Konsistente Normalisierung (CF-002)
+
+### Geplante Code-Fixes
+
+| CF     | Beschreibung                                                   | Status  |
+| ------ | -------------------------------------------------------------- | ------- |
+| CF-001 | Entwicklungs- und Phasenkommentare aus dem Validator entfernen | geplant |
+| CF-002 | normalize() in allen Validierungsmethoden konsequent verwenden | geplant |
+
+
+
+| CF     | Beschreibung                                                                   | Priorität |
+| ------ | ------------------------------------------------------------------------------ | --------- |
+| CF-001 | Entwicklungs-/Phasenkommentare bereinigen                                      | P3        |
+| CF-002 | `normalize()` im Validator konsequent verwenden                                | P3        |
+| CF-003 | Atomare Schreibvorgänge in `SubmissionStorage` verifizieren und ggf. absichern | P2        |
+| CF-004 | Projektdokumentation erweitern                                                 | P2        |
+| CF-005 | `README.md` vervollständigen                                                   | P1        |
+
+
+
+
+### Nächster Meilenstein
+
+Audit-Block 9 – Logging & Persistenz
+
+
+
+---
+
+# Nächster Abschnitt
+
+Nach Abschluss des Audits werden sämtliche Codeänderungen als
+
+CF-001
+
+CF-002
+
+CF-003
+
+...
+
+dokumentiert und den jeweiligen Auditpunkten zugeordnet.

@@ -6,6 +6,13 @@ declare(strict_types=1);
 
 $fields = $data->toArray();
 
+$labels = [
+    'name' => 'Name',
+    'email' => 'E-Mail',
+    'subject' => 'Betreff',
+    'message' => 'Nachricht',
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -22,14 +29,14 @@ $fields = $data->toArray();
 <table cellpadding="6" cellspacing="0" border="1" style="border-collapse: collapse; width: 100%;">
     <tbody>
 
-    <?php foreach ($fields as $label => $value): ?>
+    <?php foreach ($fields as $key => $value): ?>
 
         <tr>
             <th
                 align="left"
                 style="background:#f5f5f5;width:180px;"
             >
-                <?= htmlspecialchars(ucfirst($label), ENT_QUOTES, 'UTF-8') ?>
+                <?= htmlspecialchars($labels[$key] ?? ucfirst($key), ENT_QUOTES, 'UTF-8') ?>
             </th>
 
             <td>

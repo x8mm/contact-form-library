@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ContactForm\Mail;
 
 use ContactForm\Config\Config;
+use ContactForm\Exception\ConfigurationException;
 
 /**
  * Ermittelt die Empfänger aus der Konfiguration.
@@ -20,6 +21,8 @@ final class RecipientResolver
      * Liefert alle Empfänger.
      *
      * @return list<string>
+     *
+     * @throws ConfigurationException
      */
     public function resolve(): array
     {
@@ -32,6 +35,17 @@ final class RecipientResolver
             ),
             static fn(string $mail): bool => $mail !== ''
         );
+
+        foreach ($recipients as $recipient) {
+            if (!filter_var($recipient, FILTER_VALIDATE_EMAIL)) {
+                throw new ConfigurationException(
+                    sprintf(
+                        'Ungültige E-Mail-Adresse in MAIL_RECIPIENTS: "%s".',
+                        $recipient
+                    )
+                );
+            }
+        }
 
         return array_values($recipients);
     }
